@@ -27,14 +27,14 @@ fi
 echo ""
 echo "==> Terraform init"
 echo ""
-docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/ansible-docker terraform init -var-file="$SECRET" /data/terraform
+docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/cloudgen-essentials terraform init -var-file="$SECRET" /data/terraform
 
 echo ""
 echo "==> Terraform plan"
 echo ""
-docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/ansible-docker terraform plan -state="$STATE" -var-file="$SECRET" /data/terraform
+docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/cloudgen-essentials terraform plan -state="$STATE" -var-file="$SECRET" /data/terraform
 
 echo ""
 echo "==> Terraform apply"
 echo ""
-docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/ansible-docker terraform apply -state="$STATE" -var-file="$SECRET" /data/terraform 
+docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/cloudgen-essentials terraform apply -state="$STATE" -var-file="$SECRET" /data/terraform 

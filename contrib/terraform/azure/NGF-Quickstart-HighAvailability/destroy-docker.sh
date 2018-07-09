@@ -20,5 +20,5 @@ STATE="/data/state/terraform.tfstate"
 
 echo "==> Terraform destroy"
 echo ""
-docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/ansible-docker \
+docker run --rm -itv $PWD:/data -v $PWD/terraform-run:/.terraform/ -v ~/.ssh:/ssh/ jvhoof/cloudgen-essentials \
     terraform destroy --state="$STATE" -var-file="$SECRET" /data/terraform
